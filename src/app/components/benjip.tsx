@@ -3,13 +3,15 @@ function BenjiH1() {
     <>
       <div className="mt-8">
         <h1 className="text-center">
-          <span className="font-semibold text-4xl text-indigo-600/90">
+          <span className="font-semibold text-6xl text-indigo-600/90">
             Benji Peng
           </span>
-          <span className="text-4xl">&nbsp;</span>
-          <span className="font-medium italic text-2xl">
-            Ph.D. in Chemisrty
-          </span>
+          <br />
+          <div className="mt-4">
+            <span className="font-medium italic text-2xl">
+              Ph.D. in Chemisrty
+            </span>
+          </div>
         </h1>
       </div>
     </>
