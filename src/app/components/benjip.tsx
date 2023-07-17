@@ -45,7 +45,7 @@ const BenjiHeadline = () => {
 const BenjiTags = () => {
   return (
     <>
-      <div className="flex my-4 flex-row place-content-center">
+      <div className="flex flex-row flex-auto flex-wrap my-4 place-content-center">
         <div className="badge badge badge-neutral">
           <span className="font-semibold">Analytical Chemistry</span>
         </div>
