@@ -1,4 +1,6 @@
 "use client";
+
+import hero_bg from "../../../public/hero.jpg";
 import BenjiP from "./benjip";
 
 const Hero = () => {
@@ -7,7 +9,7 @@ const Hero = () => {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: 'url("/hero.jpg")',
+          backgroundImage: `url(${hero_bg.src})`,
         }}
       >
         <div className="hero-overlay bg-opacity-90"></div>
