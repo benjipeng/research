@@ -1,0 +1,23 @@
+<svg width="58" height="22" viewBox="0 0 58 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M23 3V15.1875C23 16.7408 24.2592 18 25.8125 18H38" stroke="#757678" stroke-width="2" />
+  <path
+    d="M26 14L29.31 11.0118C30.0309 10.361 31.1999 10.361 31.9208 11.0118L32.5407 11.5715C33.2617 12.2223 34.4306 12.2223 35.1516 11.5715L38 9"
+    stroke="#0066FF" stroke-width="2" />
+  <path
+    d="M49 5H47C46.4477 5 46 5.33579 46 5.75V7.25C46 7.66421 46.4477 8 47 8H49C49.5523 8 50 7.66421 50 7.25V5.75C50 5.33579 49.5523 5 49 5Z"
+    stroke="#FFF500" stroke-width="2" />
+  <path
+    d="M55.125 11H49.875C49.3918 11 49 11.4477 49 12V14C49 14.5523 49.3918 15 49.875 15H55.125C55.6082 15 56 14.5523 56 14V12C56 11.4477 55.6082 11 55.125 11Z"
+    stroke="#F30000" stroke-width="2" />
+  <path d="M43 4V15.375C43 16.8248 44.1751 18 45.625 18H57" stroke="#868686" stroke-width="2" stroke-linecap="square" />
+  <path d="M9.16667 6.41667L9.16667 2.75" stroke="#757678" stroke-width="2" />
+  <path d="M12.8333 6.41667L12.8333 2.75" stroke="#09111D" stroke-width="2" />
+  <path d="M9.16667 19.25L9.16667 15.5833" stroke="#09111D" stroke-width="2" />
+  <path d="M12.8333 19.25L12.8333 15.5833" stroke="#757678" stroke-width="2" />
+  <path d="M15.5833 9.16667L19.25 9.16667" stroke="#757678" stroke-width="2" />
+  <path d="M15.5833 12.8333L19.25 12.8333" stroke="#09111D" stroke-width="2" />
+  <path d="M2.75 9.16667L6.41667 9.16667" stroke="#09111D" stroke-width="2" />
+  <path d="M2.75 12.8333L6.41667 12.8333" stroke="#757678" stroke-width="2" />
+  <rect x="6.41667" y="6.41667" width="9.16667" height="9.16667" rx="3" stroke="#0066FF" stroke-width="2" />
+  <rect x="10.0833" y="10.0833" width="1.83333" height="1.83333" rx="0.5" fill="#757678" />
+</svg>
