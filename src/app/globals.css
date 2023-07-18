@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.collapse{
+  padding: 0px;
+  min-height: 0px;
+  border-radius: 5px;
+  margin: 0px;
+}
+
+.collapse-title{
+  min-height: 0px;
+  padding-left: 1em;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin:0px;
+}

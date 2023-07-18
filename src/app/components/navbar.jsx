@@ -44,7 +44,7 @@ const NavBar = () => {
       <div className="navbar shadow-lg px-4 sm:px-8">
         <div className="flex-1">
           <Image src={logo} alt="OM" className="btn btn-ghost w-24 p-0" />
-          <h1 className="text-xl font-extrabold mx-4">Research</h1>
+          <h1 className="text-xl font-extrabold mx-4">B. Peng, Ph.D.</h1>
         </div>
         <div className="flex-none">
           {/* Toggle button here */}
