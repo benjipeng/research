@@ -10,9 +10,15 @@
 }
 
 .collapse-title{
-  min-height: 0px;
+  min-height: 1px;
   padding-left: 1em;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   margin:0px;
+}
+
+.collapse-title,
+:where(.collapse > input[type="checkbox"]),
+:where(.collapse > input[type="radio"]) {
+  min-height: 0px; 
 }
