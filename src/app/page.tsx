@@ -11,8 +11,11 @@ export default function Home() {
     <>
       <NavBar></NavBar>
       <Hero></Hero>
+      <div className="h-32 bg-black bg-opacity-10"></div>
       <Education></Education>
+      <div className="h-32 bg-black bg-opacity-10"></div>
       <Research></Research>
+      <div className="h-32 bg-black bg-opacity-10"></div>
       <StartCarousel></StartCarousel>
       <Footer></Footer>
     </>
