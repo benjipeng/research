@@ -40,7 +40,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-20 backdrop-filter backdrop-blur-lg bg-opacity-5">
+    <div className="sticky top-0 z-20 bg-black backdrop-filter backdrop-blur-md bg-opacity-10">
       <div className="navbar shadow-lg px-4 sm:px-8">
         <div className="flex-1">
           <Image src={logo} alt="OM" className="btn btn-ghost w-24 p-0" />
