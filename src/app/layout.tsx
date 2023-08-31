@@ -7,8 +7,9 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Research",
-  description: "Benji's Scientific Research in Analytical Chemsitry",
+  title: "Research by appcubic",
+  description:
+    "Benji's Scientific Research in Analytical Chemsitry for AppCubic, appcubic",
 };
 
 export default function RootLayout({
