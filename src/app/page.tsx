@@ -10,18 +10,6 @@ import Script from "next/script";
 export default function Home() {
   return (
     <>
-      <div className="container">
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-FHBQWLC1D4" />
-        <Script id="google-analytics">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-FHBQWLC1D4');
-        `}
-        </Script>
-      </div>
       <NavBar></NavBar>
       <Hero></Hero>
       <div className="h-32 bg-black bg-opacity-10"></div>

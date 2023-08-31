@@ -20,6 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <div className="container">
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-FHBQWLC1D4" />
+          <Script id="google-analytics">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-FHBQWLC1D4');
+        `}
+          </Script>
+        </div>
         {/* <Script>{`if (
     localStorage.getItem('color-theme') === 'dark' ||
     (!('color-theme' in localStorage) &&
