@@ -6,6 +6,8 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const GA_MEASUREMENT_ID = "G-FHBQWLC1D4";
+
 export const metadata: Metadata = {
   title: "Research by Benji from Appcubic",
   description:
@@ -19,19 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-FHBQWLC1D4" />
-        <Script id="google-analytics">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-FHBQWLC1D4');
-        `}
-        </Script>
-
-        {/* <Script>{`if (
+      <>
+        <Head>
+          {/* <Script>{`if (
     localStorage.getItem('color-theme') === 'dark' ||
     (!('color-theme' in localStorage) &&
       window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -40,7 +32,20 @@ export default function RootLayout({
   } else {
     document.documentElement.classList.remove('dark');
   }`}</Script> */}
-      </Head>
+        </Head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  `}
+        </Script>
+      </>
       <body className={inter.className}>{children}</body>
     </html>
   );
