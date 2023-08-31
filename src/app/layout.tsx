@@ -33,18 +33,14 @@ export default function RootLayout({
     document.documentElement.classList.remove('dark');
   }`}</Script> */}
         </Head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '${GA_MEASUREMENT_ID}');
-  `}
-        </Script>
+<Script async src="https://www.googletagmanager.com/gtag/js?id=G-FHBQWLC1D4"></Script>
+<Script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FHBQWLC1D4');
+</Script>
       </>
       <body className={inter.className}>{children}</body>
     </html>
