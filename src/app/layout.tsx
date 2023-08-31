@@ -7,7 +7,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Research by appcubic",
+  title: "Research by Benji from Appcubic",
   description:
     "Benji's Scientific Research in Analytical Chemsitry for AppCubic, appcubic",
 };
@@ -20,18 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <div className="container">
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-FHBQWLC1D4" />
-          <Script id="google-analytics">
-            {`
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-FHBQWLC1D4" />
+        <Script id="google-analytics">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
           gtag('config', 'G-FHBQWLC1D4');
         `}
-          </Script>
-        </div>
+        </Script>
+
         {/* <Script>{`if (
     localStorage.getItem('color-theme') === 'dark' ||
     (!('color-theme' in localStorage) &&
