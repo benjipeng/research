@@ -45,10 +45,10 @@ import Chrome from '../components/Chrome.astro';
                   fill="url(#dots)" opacity=".35"/>
           </svg>
         </div>
-        <div class="ticks" id="ticks"></div>
       </div>
 
       <div class="near" id="near">
+        <div class="ticks" id="ticks"></div>
         <div class="station up" style="left:67.2vw;color:#8b5cf6">
           <span class="marker"></span>
           <div class="card">
@@ -139,12 +139,6 @@ import Chrome from '../components/Chrome.astro';
       <div class="op-ledger">
         <div class="lrow"><span class="yr">2021</span><span class="school">Georgia Institute of Technology</span><span class="deg">Ph.D.</span></div>
         <div class="lrow"><span class="yr">2014</span><span class="school">University of Minnesota</span><span class="deg">B.A.</span></div>
-        <div class="metrics">
-          <div><span class="n">1,176</span><span class="k">Citations</span></div>
-          <div><span class="n">16</span><span class="k">h-index</span></div>
-          <div><span class="n">30</span><span class="k">i10-index</span></div>
-          <div><span class="n">91</span><span class="k">Works</span></div>
-        </div>
       </div>
     </div>
 
@@ -171,10 +165,6 @@ import Chrome from '../components/Chrome.astro';
   .near { position: absolute; top: 0; bottom: 0; left: 0; width: 420vw; z-index: 3; will-change: transform; }
   .terrain { position: absolute; left: 0; right: 0; bottom: 0; height: 58vh; }
   .terrain svg { width: 100%; height: 100%; display: block; }
-  .ticks { position: absolute; left: 0; bottom: 0; height: 100%; width: 100%; pointer-events: none; }
-  .tick { position: absolute; bottom: 0; top: 0; width: 1px; }
-  .tick::before { content: ""; position: absolute; bottom: 14vh; top: 12vh; width: 1px; background: rgba(232,230,221,.07); }
-  .tick span { position: absolute; bottom: 6.5vh; left: -14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; color: var(--dim); }
 
   .station { position: absolute; top: 0; height: 100%; display: flex; align-items: center; opacity: .25; transition: opacity .6s; }
   .station.on { opacity: 1; }
@@ -222,19 +212,14 @@ import Chrome from '../components/Chrome.astro';
   .op-ledger .yr { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--dim); }
   .op-ledger .school { font-weight: 500; font-size: clamp(1.05rem, 1.8vw, 1.5rem); letter-spacing: -0.01em; }
   .op-ledger .deg { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; color: var(--dim); text-transform: uppercase; }
-  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--hair); margin-top: 5vh; }
-  .metrics > div { padding: 20px 16px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 6px; }
-  .metrics > div:last-child { border-right: 0; }
-  .metrics .n { font-weight: 500; font-size: clamp(1.4rem, 2.4vw, 2.1rem); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-  .metrics .k { font-family: var(--mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
 
   @media (max-width: 900px) {
-    .station .card { max-width: 240px; }
+    .station .card { max-width: 190px; }
+    .station .card p { display: none; }
+    .station .fig { width: 96px; height: 96px; }
     .operator { grid-template-columns: 1fr; }
     .row { grid-template-columns: 1fr; gap: 6px; }
     .row .c { text-align: left; }
-    .metrics { grid-template-columns: repeat(2, 1fr); }
-    .metrics > div:nth-child(2) { border-right: 0; }
   }
 </style>
 
@@ -258,13 +243,14 @@ import Chrome from '../components/Chrome.astro';
     }
   })();
 
-  /* wavelength ticks */
+  /* wavelength ticks — aligned with stations/λ on the near layer */
+  const PANO_VW = matchMedia('(max-width: 900px)').matches ? 560 : 420;
   (function () {
     const ticks = document.getElementById('ticks');
     if (!ticks) return;
     for (let nm = 300; nm <= 800; nm += 50) {
       const t = document.createElement('div'); t.className = 'tick';
-      t.style.left = ((nm - 300) / 500 * 420) + 'vw';
+      t.style.left = ((nm - 300) / 500 * PANO_VW) + 'vw';
       const s = document.createElement('span'); s.textContent = nm;
       t.appendChild(s); ticks.appendChild(t);
     }
@@ -277,7 +263,7 @@ import Chrome from '../components/Chrome.astro';
     const far = document.getElementById('far'), mid = document.getElementById('mid'), near = document.getElementById('near');
     const intro = document.getElementById('intro'), lamval = document.getElementById('lamval');
     const stations = [...document.querySelectorAll('.station')];
-    const PANO_VW = 420;
+    if (PANO_VW !== 420) stations.forEach(st => { st.style.left = (parseFloat(st.style.left) * PANO_VW / 420) + 'vw'; });
     function update() {
       const r = journey.getBoundingClientRect();
       const total = r.height - innerHeight;
@@ -305,12 +291,11 @@ import Chrome from '../components/Chrome.astro';
   (function () {
     const record = document.getElementById('record');
     if (!record) return;
-    const bl = document.querySelector('.chrome .bl');
-    if (bl) bl.style.transition = 'opacity .5s';
+    const corners = [...document.querySelectorAll('.chrome .tl, .chrome .tr, .chrome .bl')];
     new IntersectionObserver((es) => {
       es.forEach(e => {
         document.body.classList.toggle('past', e.isIntersecting);
-        if (bl) bl.style.opacity = e.isIntersecting ? '0' : '1';
+        corners.forEach(c => { c.style.opacity = e.isIntersecting ? '0' : '1'; });
       });
     }, { threshold: 0.08 }).observe(record);
   })();

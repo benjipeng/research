@@ -68,6 +68,13 @@ img { display: block; }
 }
 .plate figcaption b { color: var(--bone); font-weight: 500; }
 
+/* JS-created elements (stars, wavelength ticks) — must live in unscoped CSS */
+.far i { position: absolute; border-radius: 50%; background: rgba(232, 230, 221, 0.5); }
+.ticks { position: absolute; left: 0; bottom: 0; height: 100%; width: 100%; pointer-events: none; }
+.tick { position: absolute; bottom: 0; top: 0; width: 1px; }
+.tick::before { content: ""; position: absolute; bottom: 14vh; top: 12vh; width: 1px; background: rgba(232, 230, 221, 0.07); }
+.tick span { position: absolute; bottom: 6.5vh; left: -14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; color: var(--dim); }
+
 /* tag chips */
 .tags { display: flex; gap: 10px; flex-wrap: wrap; }
 .tags span {
