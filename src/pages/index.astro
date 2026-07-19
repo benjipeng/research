@@ -1,0 +1,317 @@
+---
+import Base from '../layouts/Base.astro';
+import Chrome from '../components/Chrome.astro';
+---
+<Base title="B. Peng, Ph.D. — Research · AppCubic">
+  <Chrome tl="Spectrum Landscape" tr="Research by AppCubic" bl="Traverse 300 — 800 NM" />
+  <div class="lambda" aria-hidden="true">λ <b id="lamval">300.0</b> NM</div>
+
+  <section class="journey" id="journey">
+    <div class="stage">
+
+      <div class="far" id="far"></div>
+
+      <div class="mid" id="mid">
+        <div class="terrain">
+          <svg viewBox="0 0 3000 500" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="spec" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#5b21b6"/>
+                <stop offset=".16" stop-color="#7c3aed"/>
+                <stop offset=".30" stop-color="#2563eb"/>
+                <stop offset=".376" stop-color="#06b6d4"/>
+                <stop offset=".418" stop-color="#22c55e"/>
+                <stop offset=".50" stop-color="#a3e635"/>
+                <stop offset=".62" stop-color="#ef4444"/>
+                <stop offset=".75" stop-color="#991b1b"/>
+                <stop offset="1" stop-color="#1c0505"/>
+              </linearGradient>
+              <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+                <stop offset=".55" stop-color="#fff" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#fff" stop-opacity=".04"/>
+              </linearGradient>
+              <pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse">
+                <circle cx="3.5" cy="3.5" r="1.05" fill="#e8e6dd" opacity=".55"/>
+              </pattern>
+              <filter id="glow" x="-10%" y="-40%" width="120%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+              <mask id="fadeM"><rect width="3000" height="500" fill="url(#fade)"/></mask>
+            </defs>
+            <path d="M 0 500 L 0.0 500.0 L 700.0 499.9 L 740.0 499.6 L 780.0 495.2 L 820.0 472.6 L 860.0 422.3 L 900.0 390.0 L 940.0 422.3 L 980.0 472.6 L 1020.0 495.0 L 1060.0 498.0 L 1095.0 488.9 L 1110.0 407.8 L 1120.0 229.2 L 1130.0 141.6 L 1140.0 280.5 L 1150.0 398.7 L 1165.0 402.8 L 1190.0 335.7 L 1215.0 264.8 L 1240.0 216.9 L 1255.0 208.6 L 1270.0 217.8 L 1290.0 253.8 L 1310.0 305.9 L 1330.0 359.9 L 1350.0 404.4 L 1370.0 434.1 L 1390.0 449.4 L 1410.0 453.7 L 1430.0 451.7 L 1460.0 444.8 L 1495.0 440.0 L 1530.0 443.2 L 1570.0 455.5 L 1610.0 470.6 L 1650.0 480.6 L 1690.0 478.2 L 1730.0 456.6 L 1770.0 414.5 L 1810.0 365.5 L 1840.0 340.3 L 1860.0 335.0 L 1880.0 340.3 L 1910.0 365.6 L 1950.0 415.2 L 1990.0 458.8 L 2030.0 484.6 L 2070.0 495.3 L 2110.0 498.1 L 2155.0 496.8 L 2200.0 491.9 L 2250.0 481.3 L 2300.0 466.0 L 2350.0 451.2 L 2400.0 445.0 L 2450.0 451.2 L 2500.0 466.0 L 2550.0 481.3 L 2600.0 492.0 L 2650.0 497.3 L 2700.0 499.3 L 2780.0 499.9 L 2900.0 500.0 L 3000.0 500.0 L 3000 500 Z"
+                  fill="url(#spec)" opacity=".34" filter="url(#glow)"/>
+            <path d="M 0 500 L 0.0 500.0 L 700.0 499.9 L 740.0 499.6 L 780.0 495.2 L 820.0 472.6 L 860.0 422.3 L 900.0 390.0 L 940.0 422.3 L 980.0 472.6 L 1020.0 495.0 L 1060.0 498.0 L 1095.0 488.9 L 1110.0 407.8 L 1120.0 229.2 L 1130.0 141.6 L 1140.0 280.5 L 1150.0 398.7 L 1165.0 402.8 L 1190.0 335.7 L 1215.0 264.8 L 1240.0 216.9 L 1255.0 208.6 L 1270.0 217.8 L 1290.0 253.8 L 1310.0 305.9 L 1330.0 359.9 L 1350.0 404.4 L 1370.0 434.1 L 1390.0 449.4 L 1410.0 453.7 L 1430.0 451.7 L 1460.0 444.8 L 1495.0 440.0 L 1530.0 443.2 L 1570.0 455.5 L 1610.0 470.6 L 1650.0 480.6 L 1690.0 478.2 L 1730.0 456.6 L 1770.0 414.5 L 1810.0 365.5 L 1840.0 340.3 L 1860.0 335.0 L 1880.0 340.3 L 1910.0 365.6 L 1950.0 415.2 L 1990.0 458.8 L 2030.0 484.6 L 2070.0 495.3 L 2110.0 498.1 L 2155.0 496.8 L 2200.0 491.9 L 2250.0 481.3 L 2300.0 466.0 L 2350.0 451.2 L 2400.0 445.0 L 2450.0 451.2 L 2500.0 466.0 L 2550.0 481.3 L 2600.0 492.0 L 2650.0 497.3 L 2700.0 499.3 L 2780.0 499.9 L 2900.0 500.0 L 3000.0 500.0 L 3000 500 Z"
+                  fill="url(#spec)" mask="url(#fadeM)" opacity=".8"/>
+            <path d="M 0 500 L 0.0 500.0 L 700.0 499.9 L 740.0 499.6 L 780.0 495.2 L 820.0 472.6 L 860.0 422.3 L 900.0 390.0 L 940.0 422.3 L 980.0 472.6 L 1020.0 495.0 L 1060.0 498.0 L 1095.0 488.9 L 1110.0 407.8 L 1120.0 229.2 L 1130.0 141.6 L 1140.0 280.5 L 1150.0 398.7 L 1165.0 402.8 L 1190.0 335.7 L 1215.0 264.8 L 1240.0 216.9 L 1255.0 208.6 L 1270.0 217.8 L 1290.0 253.8 L 1310.0 305.9 L 1330.0 359.9 L 1350.0 404.4 L 1370.0 434.1 L 1390.0 449.4 L 1410.0 453.7 L 1430.0 451.7 L 1460.0 444.8 L 1495.0 440.0 L 1530.0 443.2 L 1570.0 455.5 L 1610.0 470.6 L 1650.0 480.6 L 1690.0 478.2 L 1730.0 456.6 L 1770.0 414.5 L 1810.0 365.5 L 1840.0 340.3 L 1860.0 335.0 L 1880.0 340.3 L 1910.0 365.6 L 1950.0 415.2 L 1990.0 458.8 L 2030.0 484.6 L 2070.0 495.3 L 2110.0 498.1 L 2155.0 496.8 L 2200.0 491.9 L 2250.0 481.3 L 2300.0 466.0 L 2350.0 451.2 L 2400.0 445.0 L 2450.0 451.2 L 2500.0 466.0 L 2550.0 481.3 L 2600.0 492.0 L 2650.0 497.3 L 2700.0 499.3 L 2780.0 499.9 L 2900.0 500.0 L 3000.0 500.0 L 3000 500 Z"
+                  fill="url(#dots)" opacity=".35"/>
+          </svg>
+        </div>
+        <div class="ticks" id="ticks"></div>
+      </div>
+
+      <div class="near" id="near">
+        <div class="station up" style="left:67.2vw;color:#8b5cf6">
+          <span class="marker"></span>
+          <div class="card">
+            <span class="lam" style="color:#a78bfa">Below visible · λ 0.154 nm</span>
+            <h3>Structure, by diffraction</h3>
+            <p>Before the light shows anything, X-rays scatter off the crystal. The GFP β-barrel — PDB 1EMA — becomes the ground truth every engineered variant is measured against.</p>
+          </div>
+        </div>
+        <div class="station" style="left:126vw;color:#3b82f6">
+          <span class="marker"></span>
+          <div class="card">
+            <div class="fig"><img src="/assets/img/wellcome-hela-metaphase.jpg" alt="HeLa metaphase, multichannel confocal" loading="lazy" /></div>
+            <span class="lam" style="color:#60a5fa">λ 450 nm · Blue channel</span>
+            <h3>Confocal &amp; BFP</h3>
+            <p>The blue end of the palette. Multi-channel acquisition is what makes reference-free imaging possible at all.</p>
+          </div>
+        </div>
+        <div class="station up" style="left:157.9vw;color:#22d3ee">
+          <span class="marker"></span>
+          <div class="card">
+            <span class="lam" style="color:#22d3ee">λ 488 nm · Excitation line</span>
+            <h3>The laser line</h3>
+            <p>One narrow line of light does the asking. Everything else on this landscape is the answer.</p>
+          </div>
+        </div>
+        <div class="station dn" style="left:175.6vw;color:#22c55e">
+          <span class="marker"></span>
+          <div class="card">
+            <div class="fig"><img src="/assets/img/wellcome-gfp-transfected.jpg" alt="GFP transfected cells" loading="lazy" /></div>
+            <span class="lam" style="color:#4ade80">λ 509 nm · GFP / OMFP</span>
+            <h3>Optical modulation</h3>
+            <p>Fluorescent proteins engineered to switch on command — background rejected in the FFT domain, not by hardware. SAFIRe.</p>
+            <a class="go" href="/work/optical-modulation">Descend into this work →</a>
+          </div>
+        </div>
+        <div class="station" style="left:260.4vw;color:#ef4444">
+          <span class="marker"></span>
+          <div class="card">
+            <div class="fig"><img src="/assets/img/wellcome-neuron.jpg" alt="Hippocampal neuron, red channel" loading="lazy" /></div>
+            <span class="lam" style="color:#f87171">λ 610 nm · Red channel</span>
+            <h3>mCherry &amp; the overlay</h3>
+            <p>Where the green channel meets the red, registration becomes measurement. Two channels, one signal.</p>
+          </div>
+        </div>
+        <div class="station" style="left:336vw;color:#9ca3af">
+          <span class="marker"></span>
+          <div class="card">
+            <div class="fig"><img src="/assets/img/retention-ridges.png" alt="Retention projection, chromatogram ridges" loading="lazy" /></div>
+            <span class="lam" style="color:#d1d5db">Beyond visible · m/z</span>
+            <h3>Mass over charge</h3>
+            <p>Past the edge of vision the measurement continues — GC–MS and LC–MS retention projection, and the machine-learning program that grew from it.</p>
+            <a class="go" href="/work/retention-projection">Retention projection →</a>
+            <a class="go" href="/work/machine-learning" style="margin-left:18px">Machine learning →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro" id="intro">
+        <h1>B. PENG</h1>
+        <p>A body of work, laid along the spectrum.</p>
+        <div class="cue mi">Scroll to travel <span class="arrow">→</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="record" id="record">
+    <div class="rec-head">
+      <span class="mi">The record · highlights</span>
+      <a class="mi" href="https://scholar.google.com/citations?user=hrK_hacAAAAJ&hl=en" target="_blank" rel="noopener">Full record : Google Scholar ↗</a>
+    </div>
+    <div class="rows">
+      <a class="row" href="/work/machine-learning"><span class="t">Large Language Models and Cognitive Science — a comprehensive review</span><span class="v">arXiv · 2024</span></a>
+      <a class="row" href="/work/machine-learning"><span class="t">Jailbreaking and mitigation of vulnerabilities in large language models</span><span class="v">arXiv · 2024</span></a>
+      <a class="row" href="/work/machine-learning"><span class="t">Securing large language models — bias, misinformation, and prompt attacks</span><span class="v">arXiv · 2024</span></a>
+      <a class="row" href="/work/machine-learning"><span class="t">From aleatoric to epistemic — uncertainty quantification in AI</span><span class="v">arXiv · 2025</span></a>
+      <a class="row" href="/work/optical-modulation"><span class="t">Optically modulated fluorescent proteins through dark state engineering</span><span class="v">J. Phys. Chem. B · 2021</span></a>
+      <a class="row" href="/work/retention-projection"><span class="t">Unbiased GC retention factor vs. temperature relationships</span><span class="v">J. Chromatography A · 2014</span></a>
+      <a class="row" href="/work/machine-learning"><span class="t">Machine-learning prediction of mortality in dialysis patients</span><span class="v">Frontiers in Public Health · 2025</span></a>
+    </div>
+
+    <div class="operator">
+      <div class="op-id">
+        <span class="mi">The operator</span>
+        <h2>Benji Peng, <span style="font-weight:300;color:var(--dim)">Ph.D.</span></h2>
+        <p class="op-line">Principal Investigator, AppCubic. Analytical chemistry and biophysics — and the machine-learning program that grew out of the measurement bench.</p>
+      </div>
+      <div class="op-ledger">
+        <div class="lrow"><span class="yr">2021</span><span class="school">Georgia Institute of Technology</span><span class="deg">Ph.D.</span></div>
+        <div class="lrow"><span class="yr">2014</span><span class="school">University of Minnesota</span><span class="deg">B.A.</span></div>
+        <div class="metrics">
+          <div><span class="n">1,176</span><span class="k">Citations</span></div>
+          <div><span class="n">16</span><span class="k">h-index</span></div>
+          <div><span class="n">30</span><span class="k">i10-index</span></div>
+          <div><span class="n">91</span><span class="k">Works</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="mi"><b>B. Peng, Ph.D.</b> — AppCubic · 2026</span>
+      <span class="mi">Measured across the spectrum — imagery : Wellcome Collection CC-BY · RCSB PDB CC0 · computed in-house</span>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .lambda { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 60; pointer-events: none;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim);
+    transition: opacity .5s; }
+  body.past .lambda { opacity: 0; }
+  .lambda b { color: var(--bone); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  .journey { height: 520vh; position: relative; }
+  .stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+  .far { position: absolute; top: 0; bottom: 0; left: 0; width: 640vw; z-index: 1; will-change: transform; }
+  .far i { position: absolute; border-radius: 50%; background: rgba(232,230,221,.5); }
+  .mid { position: absolute; top: 0; bottom: 0; left: 0; width: 420vw; z-index: 2; will-change: transform; }
+  .near { position: absolute; top: 0; bottom: 0; left: 0; width: 420vw; z-index: 3; will-change: transform; }
+  .terrain { position: absolute; left: 0; right: 0; bottom: 0; height: 58vh; }
+  .terrain svg { width: 100%; height: 100%; display: block; }
+  .ticks { position: absolute; left: 0; bottom: 0; height: 100%; width: 100%; pointer-events: none; }
+  .tick { position: absolute; bottom: 0; top: 0; width: 1px; }
+  .tick::before { content: ""; position: absolute; bottom: 14vh; top: 12vh; width: 1px; background: rgba(232,230,221,.07); }
+  .tick span { position: absolute; bottom: 6.5vh; left: -14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; color: var(--dim); }
+
+  .station { position: absolute; top: 0; height: 100%; display: flex; align-items: center; opacity: .25; transition: opacity .6s; }
+  .station.on { opacity: 1; }
+  .station.up { align-items: flex-start; padding-top: 13vh; }
+  .station.dn { align-items: flex-end; padding-bottom: 15vh; }
+  .station .card { transform: translateY(24px); transition: transform .8s cubic-bezier(.2,.8,.2,1); max-width: 300px; }
+  .station.on .card { transform: none; }
+  .station .lam { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+  .station h3 { font-weight: 500; font-size: clamp(1.5rem, 2.3vw, 2.2rem); letter-spacing: -0.01em; margin: 10px 0 12px; line-height: 1.08; }
+  .station p { font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.6; color: rgba(232,230,221,.7); }
+  .station .fig { width: 132px; height: 132px; border-radius: 50%; overflow: hidden; margin-bottom: 20px;
+    box-shadow: 0 0 0 1px var(--hair), 0 0 60px -12px rgba(46,230,200,.35); }
+  .station .fig img { width: 100%; height: 100%; object-fit: cover; }
+  .station .go { display: inline-block; margin-top: 18px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--bone); text-decoration: none; border-bottom: 1px solid var(--hair); padding-bottom: 4px; transition: color .3s, border-color .3s; }
+  .station .go:hover { color: var(--teal); border-color: var(--teal); }
+  .station .marker { position: absolute; bottom: 13.2vh; left: 0; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 14px 2px currentColor; }
+  .station .marker::after { content: ""; position: absolute; left: 3px; bottom: 6px; width: 1px; height: 20vh; background: linear-gradient(to top, currentColor, transparent); opacity: .4; }
+
+  .intro { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    pointer-events: none; transition: opacity .4s; background: var(--space); }
+  .intro h1 { font-weight: 600; font-size: clamp(4.5rem, 13vw, 13rem); letter-spacing: -0.02em; line-height: .92;
+    background: linear-gradient(180deg, #f4f2ea 20%, #3a3d40 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .intro p { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.7vw, 1.5rem); color: rgba(232,230,221,.85); margin-top: 3vh; }
+  .intro .cue { margin-top: 7vh; display: flex; align-items: center; gap: 14px; }
+  .intro .cue .arrow { animation: nudge 2s ease-in-out infinite; display: inline-block; }
+  @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+
+  /* record — after the traverse */
+  .record { position: relative; z-index: 1; padding: 14vh 8vw 8vh; border-top: 1px solid var(--hair); background: var(--space); }
+  .rec-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 14px; margin-bottom: 5vh; }
+  .rows { border-top: 1px solid var(--hair); }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 2.4vw; align-items: baseline; padding: 2.6vh 0;
+    border-bottom: 1px solid var(--hair); text-decoration: none; transition: padding-left .35s cubic-bezier(.2,.8,.2,1); }
+  .row:hover { padding-left: 1vw; }
+  .row:hover .t { color: var(--teal); }
+  .row .t { font-size: 15.5px; font-weight: 400; letter-spacing: -0.005em; transition: color .3s; }
+  .row .v { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; color: var(--dim); text-transform: uppercase; }
+
+  .operator { display: grid; grid-template-columns: .9fr 1.1fr; gap: 5vw; margin-top: 12vh; }
+  .op-id h2 { font-weight: 500; font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.02em; margin: 14px 0 18px; }
+  .op-line { color: rgba(232,230,221,.68); max-width: 40ch; font-size: 15.5px; }
+  .op-ledger .lrow { display: grid; grid-template-columns: 130px 1fr auto; gap: 2vw; padding: 2.4vh 0; border-bottom: 1px solid var(--hair); align-items: baseline; }
+  .op-ledger .lrow:first-child { border-top: 1px solid var(--hair); }
+  .op-ledger .yr { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--dim); }
+  .op-ledger .school { font-weight: 500; font-size: clamp(1.05rem, 1.8vw, 1.5rem); letter-spacing: -0.01em; }
+  .op-ledger .deg { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; color: var(--dim); text-transform: uppercase; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--hair); margin-top: 5vh; }
+  .metrics > div { padding: 20px 16px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 6px; }
+  .metrics > div:last-child { border-right: 0; }
+  .metrics .n { font-weight: 500; font-size: clamp(1.4rem, 2.4vw, 2.1rem); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .metrics .k { font-family: var(--mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+
+  @media (max-width: 900px) {
+    .station .card { max-width: 240px; }
+    .operator { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; gap: 6px; }
+    .row .c { text-align: left; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .metrics > div:nth-child(2) { border-right: 0; }
+  }
+</style>
+
+<script>
+  /* star field */
+  (function () {
+    const far = document.getElementById('far');
+    if (!far) return;
+    let seed = 11; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+    for (let i = 0; i < 340; i++) {
+      const s = document.createElement('i');
+      const r = rnd();
+      s.style.left = (r * 100) + '%';
+      s.style.top = (rnd() * 72) + '%';
+      const d = rnd() < .88 ? 1 : 2;
+      s.style.width = s.style.height = d + 'px';
+      s.style.opacity = (.12 + rnd() * .4).toFixed(2);
+      if (rnd() < .14) s.style.background = 'rgba(46,230,200,.6)';
+      if (rnd() < .08) s.style.background = 'rgba(255,138,60,.55)';
+      far.appendChild(s);
+    }
+  })();
+
+  /* wavelength ticks */
+  (function () {
+    const ticks = document.getElementById('ticks');
+    if (!ticks) return;
+    for (let nm = 300; nm <= 800; nm += 50) {
+      const t = document.createElement('div'); t.className = 'tick';
+      t.style.left = ((nm - 300) / 500 * 420) + 'vw';
+      const s = document.createElement('span'); s.textContent = nm;
+      t.appendChild(s); ticks.appendChild(t);
+    }
+  })();
+
+  /* the pan */
+  (function () {
+    const journey = document.getElementById('journey');
+    if (!journey) return;
+    const far = document.getElementById('far'), mid = document.getElementById('mid'), near = document.getElementById('near');
+    const intro = document.getElementById('intro'), lamval = document.getElementById('lamval');
+    const stations = [...document.querySelectorAll('.station')];
+    const PANO_VW = 420;
+    function update() {
+      const r = journey.getBoundingClientRect();
+      const total = r.height - innerHeight;
+      const p = Math.min(1, Math.max(0, -r.top / total));
+      const panoPx = innerWidth * (PANO_VW / 100) - innerWidth;
+      const pan = p * panoPx;
+      near.style.transform = `translateX(${-pan}px)`;
+      mid.style.transform = `translateX(${-pan * 0.82}px)`;
+      far.style.transform = `translateX(${-pan * 0.22}px)`;
+      intro.style.opacity = p > 0.015 ? 0 : 1;
+      const cxPx = pan + innerWidth / 2;
+      const nm = 300 + (cxPx / (innerWidth * (PANO_VW / 100))) * 500;
+      lamval.textContent = Math.min(800, Math.max(300, nm)).toFixed(1);
+      for (const st of stations) {
+        const x = parseFloat(st.style.left) / 100 * innerWidth;
+        st.classList.toggle('on', Math.abs(x - pan - innerWidth / 2) < innerWidth * .42);
+      }
+    }
+    addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+  })();
+
+  /* retire the instrument chrome once the traverse is done */
+  (function () {
+    const record = document.getElementById('record');
+    if (!record) return;
+    const bl = document.querySelector('.chrome .bl');
+    if (bl) bl.style.transition = 'opacity .5s';
+    new IntersectionObserver((es) => {
+      es.forEach(e => {
+        document.body.classList.toggle('past', e.isIntersecting);
+        if (bl) bl.style.opacity = e.isIntersecting ? '0' : '1';
+      });
+    }, { threshold: 0.08 }).observe(record);
+  })();
+</script>

@@ -1,0 +1,50 @@
+---
+import Work from '../../layouts/Work.astro';
+---
+<Work
+  title="Machine Learning · B. Peng, Ph.D."
+  word="MACHINE LEARNING"
+  line="The same posture, one layer up — measuring models, not molecules."
+  objectSrc="/assets/img/latent-constellation.png"
+  objectAlt="Latent embedding space, computed constellation"
+  chromeBl="LLM SECURITY · UQ · XAI · HEALTHCARE"
+  states={[
+    {
+      src: '/assets/img/latent-constellation.png', alt: 'Latent embedding space',
+      cap: 'Fig 3.1 — Latent space · embedding clusters',
+      yr: 'Epoch II · 2024 —', h3: 'Models, under measurement',
+      p: 'Jailbreaks and their mitigation. Uncertainty, from aleatoric to epistemic. Explanations that survive scrutiny. The clinical systems these models now touch.',
+    },
+    {
+      src: '/assets/img/wellcome-hela-anaphase.jpg', alt: 'HeLa cell in anaphase — the origin specimen',
+      cap: 'Fig 3.2 — Origin · the specimen',
+      yr: 'The origin · the posture', h3: 'The posture came from the bench',
+      p: 'Measure carefully. Quantify error honestly. Never trust a black box you have not interrogated — whether it holds cells or weights.',
+    },
+  ]}
+  nextHref="/"
+  nextLabel="Traverse again"
+>
+  <div class="crow"><span class="cno">01</span><div>
+    <h4>LLM security</h4>
+    <p>How large models are attacked, and how they are defended: <i>Jailbreaking and Mitigation of Vulnerabilities in Large Language Models</i> and <i>Securing Large Language Models — Bias, Misinformation, and Prompt Attacks</i>.</p>
+    <div class="tags" style="margin-top:22px"><span>Jailbreaking</span><span>Prompt attacks</span><span>Mitigation</span></div>
+  </div></div>
+  <div class="crow"><span class="cno">02</span><div>
+    <h4>Uncertainty &amp; explainability</h4>
+    <p>From aleatoric to epistemic — a survey of uncertainty quantification techniques in AI — and a comprehensive guide to explainable AI from classical models to LLMs. Also: large language models and cognitive science, the program's most-cited review.</p>
+    <div class="tags" style="margin-top:22px"><span>UQ</span><span>XAI</span><span>Cognitive science</span></div>
+  </div></div>
+  <div class="crow"><span class="cno">03</span><div>
+    <h4>Models in practice — healthcare</h4>
+    <p>LLM benchmarks in medical tasks, a review of clinical trials in drug discovery, and machine-learning prediction of mortality in dialysis patients — the program's clinical anchor in Frontiers in Public Health.</p>
+    <div class="tags" style="margin-top:22px"><span>Medical benchmarks</span><span>Clinical trials</span><span>Dialysis mortality</span></div>
+  </div></div>
+  <figure class="plate" style="margin-top:10vh;max-width:760px">
+    <div class="ph"><img src="/assets/img/latent-constellation.png" alt="Latent embedding space" /></div>
+    <figcaption>
+      <span><b>Anchor publication</b> — Use of machine learning models to predict mortality in dialysis patients</span>
+      <span>Frontiers in Public Health 13 · 2025</span>
+    </figcaption>
+  </figure>
+</Work>

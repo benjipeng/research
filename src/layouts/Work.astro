@@ -1,0 +1,169 @@
+---
+import Base from './Base.astro';
+import Chrome from '../components/Chrome.astro';
+
+interface State {
+  src: string; alt: string; cap: string; yr: string; h3: string; p: string; zoom?: number;
+}
+interface Props {
+  title: string;
+  word: string;
+  line: string;
+  objectSrc: string;
+  objectAlt: string;
+  states: State[];
+  nextHref: string;
+  nextLabel: string;
+  chromeBl?: string;
+}
+const { title, word, line, objectSrc, objectAlt, states, nextHref, nextLabel, chromeBl } = Astro.props;
+const journeyVh = Math.max(2, states.length) * 130;
+---
+<Base title={title}>
+  <Chrome tr={title.split('·')[0].split('|')[0].trim()} bl={chromeBl} />
+  <main>
+    <section class="hero">
+      <h1 class="hero-type">{word}</h1>
+      <p class="hero-line">{line}</p>
+      <div class="specimen"><img src={objectSrc} alt={objectAlt} /></div>
+      <div class="hero-cue"><span class="mi">Scroll to descend</span><span class="rail"></span></div>
+    </section>
+
+    <section class="journey" id="journey" style={`height:${journeyVh}vh`}>
+      <div class="stage">
+        <div class="aperture"></div>
+        <div class="object">
+          {states.map((s, i) => (
+            <div class="lay" style={`opacity:${i === 0 ? 1 : 0}`}><img src={s.src} alt={s.alt} style={s.zoom ? `transform:scale(${s.zoom})` : undefined} /></div>
+          ))}
+        </div>
+        <div class="epoch">
+          {states.map((s, i) => (
+            <div class:list={['e', { on: i === 0 }]} data-e={i}>
+              <span class="yr">{s.yr}</span>
+              <h3>{s.h3}</h3>
+              <p>{s.p}</p>
+            </div>
+          ))}
+        </div>
+        <div class="progress">
+          {states.map((_, i) => <i class:list={[{ on: i === 0 }]} />)}
+        </div>
+        <div class="figcap mi" id="figcap">{states[0].cap}</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <slot />
+    </section>
+
+    <section class="traverse">
+      <a class="trav mi" href="/">← The spectrum</a>
+      <a class="trav mi" href={nextHref}>{nextLabel} →</a>
+    </section>
+
+    <div class="foot wrap">
+      <span class="mi"><b>B. Peng, Ph.D.</b> — AppCubic · 2026</span>
+      <span class="mi">Imagery : Wellcome Collection CC-BY · RCSB PDB CC0 · computed in-house</span>
+      <span class="mi"><a href="https://scholar.google.com/citations?user=hrK_hacAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></span>
+    </div>
+  </main>
+</Base>
+
+<style>
+  main { position: relative; z-index: 1; }
+  .wrap, .content, .traverse { padding-left: 8vw; padding-right: 8vw; }
+
+  .hero { height: 100svh; position: relative; overflow: hidden; }
+  .hero-type {
+    position: absolute; left: 50%; top: 8vh; transform: translateX(-50%);
+    max-width: 92vw; text-align: center;
+    font-weight: 600; font-size: clamp(3rem, 10.5vw, 11.5rem);
+    letter-spacing: -0.015em; line-height: 0.96; user-select: none; z-index: 1;
+    background: linear-gradient(180deg, #f4f2ea 8%, #c9c7bc 45%, #4a4d50 80%, #232629 98%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-line {
+    position: absolute; left: 50%; top: 46vh; transform: translateX(-50%); z-index: 3;
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(1.1rem, 1.7vw, 1.5rem); color: rgba(232, 230, 221, 0.92);
+    white-space: nowrap; text-shadow: 0 1px 26px rgba(5, 7, 10, 0.95);
+  }
+  .specimen { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); z-index: 2; width: min(64vh, 86vw); pointer-events: none; }
+  .specimen img { width: 100%;
+    -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 96%);
+    mask-image: radial-gradient(closest-side, #000 55%, transparent 96%); }
+  .specimen::before { content: ""; position: absolute; inset: -16%; z-index: -1; border-radius: 50%;
+    background: radial-gradient(circle at 50% 46%, rgba(46,230,200,.09), rgba(122,92,255,.045) 46%, transparent 68%); }
+  .hero-cue { position: absolute; left: 50%; bottom: 1.5vh; transform: translateX(-50%); z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .hero-cue .mi { color: rgba(232,230,221,.8); }
+  .hero-cue .rail { width: 1px; height: 34px; background: linear-gradient(rgba(232,230,221,.7), transparent); }
+
+  .journey { position: relative; }
+  .stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+  .object { position: absolute; left: 50%; top: 50%; width: min(54vh, 76vw); transform: translate(-50%, -52%); }
+  .object .lay { position: absolute; inset: 0; transition: opacity .12s linear; }
+  .object .lay img { width: 100%;
+    -webkit-mask-image: radial-gradient(closest-side, #000 58%, transparent 97%);
+    mask-image: radial-gradient(closest-side, #000 58%, transparent 97%); }
+  .object .lay:first-child { position: relative; }
+  .aperture { position: absolute; left: 50%; top: 50%; width: min(62vh, 84vw); aspect-ratio: 1;
+    transform: translate(-50%, -52%); border: 1px solid var(--hair); border-radius: 50%; pointer-events: none; }
+  .aperture::before, .aperture::after { content: ""; position: absolute; background: rgba(232,230,221,.4); left: 50%; width: 1px; height: 9px; }
+  .aperture::before { top: -9px; }
+  .aperture::after { bottom: -9px; }
+  .figcap { position: absolute; left: 50%; bottom: 8vh; transform: translateX(-50%); text-align: center; }
+  .epoch { position: absolute; left: 8vw; top: 50%; transform: translateY(-50%); max-width: 330px; }
+  .epoch .e { display: none; }
+  .epoch .e.on { display: block; animation: efade .7s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes efade { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .epoch .yr { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; color: var(--teal); text-transform: uppercase; }
+  .epoch h3 { font-weight: 500; font-size: clamp(1.5rem, 2.5vw, 2.3rem); letter-spacing: -0.01em; margin: 14px 0 16px; line-height: 1.1; }
+  .epoch p { font-family: var(--serif); font-style: italic; font-size: 1.04rem; color: rgba(232,230,221,.72); line-height: 1.6; }
+  .progress { position: absolute; right: 8vw; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 14px; }
+  .progress i { width: 22px; height: 1px; background: var(--hair); transition: background .3s; }
+  .progress i.on { background: var(--teal); }
+
+  .content { padding-top: 12vh; padding-bottom: 6vh; }
+
+  .traverse { display: flex; justify-content: space-between; padding-top: 6vh; }
+  .trav { text-decoration: none; color: var(--bone) !important; }
+  .trav:hover { color: var(--teal) !important; }
+
+  @media (max-width: 900px) {
+    .epoch { left: 6vw; right: 6vw; top: auto; bottom: 15vh; max-width: none; transform: none; }
+    .progress { display: none; }
+    .hero-line { white-space: normal; text-align: center; width: 86vw; }
+  }
+</style>
+
+<script define:vars={{ caps: states.map(s => s.cap), nStates: states.length }}>
+  (function () {
+    if (nStates < 2) return;
+    const journey = document.getElementById('journey');
+    const lays = [...document.querySelectorAll('.object .lay')];
+    const epochs = [...document.querySelectorAll('.epoch .e')];
+    const ticks = [...document.querySelectorAll('.progress i')];
+    const figcap = document.getElementById('figcap');
+    let cur = -1;
+    function update() {
+      const r = journey.getBoundingClientRect();
+      const total = r.height - innerHeight;
+      const p = Math.min(1, Math.max(0, -r.top / total));
+      const seg = 1 / (nStates - 1);
+      lays.forEach((l, i) => {
+        const o = Math.min(1, Math.max(0, 1 - Math.abs(p - i * seg) / seg));
+        l.style.opacity = o;
+      });
+      const active = Math.min(nStates - 1, Math.round(p / seg));
+      if (active !== cur) {
+        cur = active;
+        epochs.forEach((e, i) => e.classList.toggle('on', i === cur));
+        ticks.forEach((t, i) => t.classList.toggle('on', i <= cur));
+        figcap.textContent = caps[cur];
+      }
+    }
+    addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>

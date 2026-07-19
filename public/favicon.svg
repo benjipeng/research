@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <filter id="g" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#05070a" stroke="rgba(232,230,221,.16)"/>
+  <circle cx="32" cy="32" r="21" fill="none" stroke="rgba(232,230,221,.34)" stroke-width="1.6"/>
+  <line x1="32" y1="7" x2="32" y2="13" stroke="rgba(232,230,221,.5)" stroke-width="1.6"/>
+  <line x1="32" y1="51" x2="32" y2="57" stroke="rgba(232,230,221,.5)" stroke-width="1.6"/>
+  <path d="M 17 42 C 23 41, 26 39, 29 34 C 31 30, 31.5 21, 34 19.5 C 36.5 18, 38 27, 40.5 33 C 42.5 37.5, 45 41, 47 42"
+        fill="none" stroke="#2ee6c8" stroke-width="2.8" stroke-linecap="round" filter="url(#g)" opacity=".7"/>
+  <path d="M 17 42 C 23 41, 26 39, 29 34 C 31 30, 31.5 21, 34 19.5 C 36.5 18, 38 27, 40.5 33 C 42.5 37.5, 45 41, 47 42"
+        fill="none" stroke="#2ee6c8" stroke-width="2.8" stroke-linecap="round"/>
+</svg>

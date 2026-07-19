@@ -1,0 +1,51 @@
+---
+import Work from '../../layouts/Work.astro';
+---
+<Work
+  title="Retention Projection · B. Peng, Ph.D."
+  word="RETENTION PROJECTION"
+  line="Retention times, predicted — not measured."
+  objectSrc="/assets/img/retention-ridges.png"
+  objectAlt="Chromatogram ridge families across temperature programs, computed"
+  chromeBl="GC–MS · LC–MS · K VS T"
+  states={[
+    {
+      src: '/assets/img/retention-ridges.png', alt: 'Retention ridges across temperature programs',
+      cap: 'Fig 2.1 — Projection · k vs T, computed ridges',
+      yr: 'The projection · k vs T', h3: 'Every compound keeps its schedule',
+      p: 'A series of temperature programs, back-calculated through effective temperature and hold-up-time profiles, recovers k-versus-T relationships — without isothermal tedium.',
+    },
+    {
+      src: '/assets/img/retention-ridges.png', alt: 'Detail of one migrating peak', zoom: 2.1,
+      cap: 'Fig 2.2 — Detail · one peak, resolved',
+      yr: 'The detail · resolution', h3: 'Under two-fold error, across instruments',
+      p: 'Accuracy comparable to isothermal measurement, and an error distribution that stays predictable across laboratories, instruments, and methods.',
+    },
+  ]}
+  nextHref="/work/machine-learning"
+  nextLabel="Machine learning"
+>
+  <div class="crow"><span class="cno">01</span><div>
+    <h4>The problem with shared retention data</h4>
+    <p>Direct methods to measure k-vs-T relationships are tedious and time-consuming. Shared retention databases are unreliable and highly dependent on the specific GC–MS system, and physical standards simply do not exist for many compounds of interest.</p>
+    <div class="tags" style="margin-top:22px"><span>GC–MS</span><span>LC–MS</span><span>Missing standards</span></div>
+  </div></div>
+  <div class="crow"><span class="cno">02</span><div>
+    <h4>The back-calculation method</h4>
+    <p>A new methodology uses a series of temperature programs and algorithmic back-calculation of effective temperature and hold-up-time profiles. It is relatively fast, easy, and requires no additional equipment — and it enables automatic calculation of retention-time tolerance windows.</p>
+    <div class="tags" style="margin-top:22px"><span>Back-calculation</span><span>Tolerance windows</span></div>
+  </div></div>
+  <div class="crow"><span class="cno">03</span><div>
+    <h4>Accuracy that travels between labs</h4>
+    <p>Retention projection is 3-fold more accurate under matched conditions, and 4- to 165-fold more accurate across laboratories using different methods — with a predictable error distribution. In LC–MS, 2- to 22-fold improvement over linear retention indexing.</p>
+    <p>Next: a large database of k-vs-T relationships, and faster methods for measuring k-vs-Φ to make the methodology routine.</p>
+    <div class="tags" style="margin-top:22px"><span>4–165× cross-lab</span><span>k vs Φ</span><span>Retention database</span></div>
+  </div></div>
+  <figure class="plate" style="margin-top:10vh;max-width:760px">
+    <div class="ph"><img src="/assets/img/retention-ridges.png" alt="Retention projection ridges" /></div>
+    <figcaption>
+      <span><b>Anchor publication</b> — A practical methodology to measure unbiased gas chromatographic retention factor vs. temperature relationships</span>
+      <span>J. Chromatography A 1374 · 2014</span>
+    </figcaption>
+  </figure>
+</Work>

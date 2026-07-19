@@ -1,0 +1,57 @@
+---
+import Work from '../../layouts/Work.astro';
+---
+<Work
+  title="Optical Modulation · B. Peng, Ph.D."
+  word="OPTICAL MODULATION"
+  line="Fluorescence, switched on command — background rejected by algorithm."
+  objectSrc="/assets/img/wellcome-gfp-transfected.jpg"
+  objectAlt="GFP fluorescence in transfected cells"
+  chromeBl="OMFP · SAFIRe · FFT LOCK-IN"
+  states={[
+    {
+      src: '/assets/img/wellcome-gfp-transfected.jpg', alt: 'GFP, transfected cells',
+      cap: 'Fig 1.1 — Specimen · GFP, transfected cells',
+      yr: 'The switch · OMFP', h3: 'Proteins that answer to light',
+      p: 'Optically modulated fluorescent proteins drive their intensity up and down under a red-shifted co-illumination. Fluorescence becomes a controllable variable — not a constant.',
+    },
+    {
+      src: '/assets/img/gfp-fft.png', alt: 'The specimen in the FFT domain, computed',
+      cap: 'Fig 1.2 — Signal · FFT domain, computed',
+      yr: 'The measurement · SAFIRe', h3: 'Signal, recovered by algorithm',
+      p: 'A fast Fourier transform of the time-series rejects every photon that does not modulate — which is to say, all of the background. Reference-free, background-free imaging: SAFIRe.',
+    },
+    {
+      src: '/assets/img/gfp-1ema.jpg', alt: 'GFP beta-barrel ribbon structure, PDB 1EMA',
+      cap: 'Fig 1.3 — Structure · GFP β-barrel, PDB 1EMA',
+      yr: 'The engineering · SDM', h3: 'New proteins, by design',
+      p: 'Site-directed mutagenesis guided by computer-assisted 3D models of the chromophore environment. Structure first, sequence second.',
+    },
+  ]}
+  nextHref="/work/retention-projection"
+  nextLabel="Retention projection"
+>
+  <div class="crow"><span class="cno">01</span><div>
+    <h4>Background-free imaging, via <span class="accent">DSP</span></h4>
+    <p>OMFPs — a novel class of fluorescent proteins uncovered by our team — hold the potential to revolutionize live-cell fluorescence imaging. Experimental data from diverse sources were systematically interconnected, and pivotal insights extracted from a sea of background noise.</p>
+    <p>Absolute reference-free and background-free cellular images were achieved by applying mathematical transformations — the fast Fourier transform — to time-series cellular fluorescence data, using bespoke algorithms in <i>Python, Matlab, and Mathematica</i>.</p>
+    <div class="tags" style="margin-top:22px"><span>OMFP</span><span>SAFIRe</span><span>FFT lock-in</span><span>Time-series DSP</span></div>
+  </div></div>
+  <div class="crow"><span class="cno">02</span><div>
+    <h4>Engineering the proteins</h4>
+    <p>Fluorescence intensity of OMFPs is precisely modulated via co-illumination with photons more red-shifted than the emission itself. New OMFPs are engineered through site-directed mutagenesis, drawing on intramolecular interactions between the chromophore and its environment via computer-assisted 3D modeling.</p>
+    <div class="tags" style="margin-top:22px"><span>SDM</span><span>3D modeling</span><span>Chromophore environment</span></div>
+  </div></div>
+  <div class="crow"><span class="cno">03</span><div>
+    <h4>Simulating the photophysics</h4>
+    <p>Optical modulation and delayed fluorescence are modeled with multi-state rate matrices analogous to Jablonski diagrams — determining photophysical parameters previously too complex to assess. The simulation stack: NumPy and Pandas for computation, SciPy for optimization, Matplotlib for visualization, in an object-oriented paradigm.</p>
+    <div class="tags" style="margin-top:22px"><span>Rate matrices</span><span>Jablonski-analogous</span><span>Python · SciPy</span></div>
+  </div></div>
+  <figure class="plate" style="margin-top:10vh;max-width:760px">
+    <div class="ph"><img src="/assets/img/gfp-1ema.jpg" alt="GFP ribbon structure, PDB 1EMA" style="background:#fff" /></div>
+    <figcaption>
+      <span><b>Anchor publication</b> — Optically modulated and optically activated delayed fluorescent proteins through dark state engineering</span>
+      <span>J. Phys. Chem. B 125 (20) · 2021</span>
+    </figcaption>
+  </figure>
+</Work>
